@@ -7,7 +7,6 @@ function App() {
   const [weeklyChart, setWeeklyChart] = useState()
 
   const API_KEY = '01013d723c1a151531d31395e6745113'
-  let displayForm = true
 
   const getWeeklyChart = async () => {
     const res = await fetch(
@@ -21,12 +20,13 @@ function App() {
   async function handleSubmit(e) {
     e.preventDefault()
     await getWeeklyChart()
-    displayForm = false
+    document.getElementById('form').style.display = 'none'
+    document.getElementById('content-container').style.display = 'flex'
   }
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} id="form">
         <h1>Digite o nome do usuário lastFM</h1>
         <div className="card">
           <input
@@ -51,7 +51,7 @@ function App() {
             />
           ))
         ) : (
-          <p>Undefined</p>
+          <p>Carregando...</p>
         )}
       </div>
     </>
