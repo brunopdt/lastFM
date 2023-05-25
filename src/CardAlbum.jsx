@@ -1,15 +1,22 @@
 import React, { useState } from 'react'
+import placeholderImg from './assets/placeholder.png'
 
 const CardAlbum = props => {
-  const [img, setImg] = useState('')
+  const [img, setImg] = useState(placeholderImg)
   generateImage(props.name, props.artist)
+  let [alterado, setalterado] = useState(false)
 
   return (
     <div className="album-card">
-      <img src={img} />
+      <img src={img} className={alterado ? 'regular' : 'placeholder'} />
       <p>{props.name}</p>
       <p>{props.artist}</p>
       <p>{props.playcount} Streams</p>
+      <a href={props.url}>
+        <button className="auth-button" id="veralbum">
+          Ver álbum no lastFM
+        </button>
+      </a>
     </div>
   )
 
@@ -19,7 +26,10 @@ const CardAlbum = props => {
     )
     const data = await res.json()
     console.log(data)
-    setImg(data.album.image[5]['#text'])
+    if (data.album.image[5]['#text'] != '') {
+      setImg(data.album.image[5]['#text'])
+      setalterado(true)
+    }
   }
 }
 
