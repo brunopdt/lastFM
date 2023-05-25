@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import placeholderImg from './assets/placeholder.png'
 
 const CardAlbum = props => {
-  const [img, setImg] = useState(placeholderImg)
+  const [img, setImg] = useState('')
   generateImage(props.name, props.artist)
   let [alterado, setalterado] = useState(false)
 
@@ -29,6 +29,8 @@ const CardAlbum = props => {
     if (data.album.image[5]['#text'] != '') {
       setImg(data.album.image[5]['#text'])
       setalterado(true)
+    } else {
+      setImg(placeholderImg)
     }
   }
 }
