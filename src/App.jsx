@@ -27,18 +27,31 @@ function App() {
   return (
     <>
       <form onSubmit={handleSubmit} id="form">
-        <h1>Digite o nome do usuário lastFM</h1>
-        <div className="card">
-          <input
-            type="text"
-            id="userName"
-            placeholder="nome de usuário"
-            onChange={e => setUser(e.target.value)}
-            value={user}
-          />
-          <button id="usersend" type="submit">
-            Enviar
-          </button>
+        <div className="background">
+          <div className="form-card">
+            <h1 className="form-title">Olá! 🪕🎺</h1>
+
+            <h2 className="form-subtitle">
+              Escreva o nome de um perfil do lastFM para ver os álbuns mais
+              ouvidos da semana e poder mostrar pros seus amigos quem tem bom
+              gosto de verdade!
+            </h2>
+
+            <div className="auth">
+              <div className="auth-label">Nome</div>
+              <input
+                className="auth-input"
+                id="userName"
+                name="username"
+                onChange={e => setUser(e.target.value)}
+                value={user}
+                autocomplete="off"
+              />
+              <button className="auth-button" id="usersend" type="submit">
+                Entrar
+              </button>
+            </div>
+          </div>
         </div>
       </form>
       <div id="content-container">
@@ -48,6 +61,7 @@ function App() {
               name={e.name}
               artist={e.artist['#text']}
               playcount={e.playcount}
+              url={e.url}
             />
           ))
         ) : (
