@@ -25,15 +25,11 @@ p {
 }
 
 .album-card {
-  width: 18%;
+  width: 18.88%;
 }
 
 #veralbum {
   width: 100%;
-}
-
-.placeholder {
-  width: 300px;
 }
 
 a {
@@ -42,10 +38,34 @@ a {
 }
 
 body {
-  background-color: #3e404b;
-  height: 100vh;
+  background: hsla(298, 19%, 31%, 1);
+
+  background: linear-gradient(
+    135deg,
+    hsla(298, 19%, 31%, 1) 0%,
+    hsla(53, 9%, 38%, 1) 76%
+  );
+
+  background: -moz-linear-gradient(
+    135deg,
+    hsla(298, 19%, 31%, 1) 0%,
+    hsla(53, 9%, 38%, 1) 76%
+  );
+
+  background: -webkit-linear-gradient(
+    135deg,
+    hsla(298, 19%, 31%, 1) 0%,
+    hsla(53, 9%, 38%, 1) 76%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#5e405f", endColorstr="#696758", GradientType=1 );
   width: 100vw;
   margin: 0px;
+}
+
+.regular,
+.placeholder {
+  width: 100%;
 }
 
 .background {
@@ -63,7 +83,7 @@ body {
 }
 
 #form {
-  background-image: url('./assets/wallpaper.jpg');
+  background-image: url('../assets/wallpaper.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -95,6 +115,7 @@ body {
   width: 100%;
   padding-bottom: 12px;
 }
+
 .auth-label {
   position: absolute;
   top: 8px;
@@ -128,4 +149,58 @@ body {
 }
 .auth-button:hover {
   filter: brightness(145%);
+}
+
+#text-semana {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#text-semana > h1 {
+  font-size: 2.5rem;
+}
+
+#semana-user {
+  text-shadow: -2px 2px 0 #fa541c;
+}
+
+#restart {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.album-info {
+  width: 90%;
+}
+
+.nome-album,
+.artista-album {
+  overflow: hidden;
+  white-space: nowrap; /* Don't forget this one */
+  text-overflow: ellipsis;
+}
+
+.flex-division {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-division > a {
+  align-self: flex-end;
+  font-size: 1.5rem;
+}
+
+.extra-text {
+  color: rgba(161, 155, 155, 0.87);
+}
+
+.nome-album {
+  font-size: 1.2rem;
+  text-shadow: -1px 1px 0 #fa541c;
 }

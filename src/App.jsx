@@ -1,6 +1,8 @@
 import { useState } from 'react'
-import './index.css'
+import './css/index.css'
 import CardAlbum from './CardAlbum'
+import Navbar from './Navbar'
+import { VscDebugRestart } from 'react-icons/vsc'
 
 function App() {
   const [user, setUser] = useState('')
@@ -22,10 +24,12 @@ function App() {
     await getWeeklyChart()
     document.getElementById('form').style.display = 'none'
     document.getElementById('content-container').style.display = 'flex'
+    document.getElementById('navbar').style.position = 'relative'
   }
 
   return (
     <>
+      <Navbar id="navbar" />
       <form onSubmit={handleSubmit} id="form">
         <div className="background">
           <div className="form-card">
@@ -45,7 +49,7 @@ function App() {
                 name="username"
                 onChange={e => setUser(e.target.value)}
                 value={user}
-                autocomplete="off"
+                autoComplete="off"
               />
               <button className="auth-button" id="usersend" type="submit">
                 Entrar
@@ -55,6 +59,29 @@ function App() {
         </div>
       </form>
       <div id="content-container">
+        <div id="text-semana">
+          <h1>
+            Semana de
+            <span id="semana-user"> {user} </span>
+            no lastFM:
+          </h1>
+          <button
+            id="restart"
+            className="auth-button"
+            onClick={() => {
+              setUser('')
+              setWeeklyChart('')
+              document.getElementById('form').style.display = 'block'
+              document.getElementById('content-container').style.display =
+                'none'
+              document.getElementById('navbar').style.position = 'absolute'
+              window.location.reload()
+            }}
+          >
+            <VscDebugRestart /> Tentar novamente
+          </button>
+        </div>
+
         {weeklyChart ? (
           weeklyChart.weeklyalbumchart.album.map(e => (
             <CardAlbum

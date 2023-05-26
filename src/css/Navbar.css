@@ -1,0 +1,29 @@
+#navbar {
+  position: absolute;
+
+  width: 100%;
+
+  background: rgba(122, 122, 122, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+}
+
+#logo {
+  width: 50px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+a {
+  display: flex;
+}
+
+#github {
+  font-size: 50px;
+  align-self: center;
+}

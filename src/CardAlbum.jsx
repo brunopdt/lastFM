@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import placeholderImg from './assets/placeholder.png'
+import { IoOpenOutline } from 'react-icons/io5'
 
 const CardAlbum = props => {
   const [img, setImg] = useState('')
@@ -9,14 +10,22 @@ const CardAlbum = props => {
   return (
     <div className="album-card">
       <img src={img} className={alterado ? 'regular' : 'placeholder'} />
-      <p>{props.name}</p>
-      <p>{props.artist}</p>
-      <p>{props.playcount} Streams</p>
-      <a href={props.url}>
-        <button className="auth-button" id="veralbum">
-          Ver álbum no lastFM
-        </button>
-      </a>
+      <div className="flex-division">
+        <div className="album-info">
+          <p className="nome-album">{props.name}</p>
+          <p className="artista-album">
+            {' '}
+            <span className="extra-text">por </span>
+            {props.artist}
+          </p>
+          <p className="stream-album">
+            {props.playcount} <span className="extra-text"> Streams</span>
+          </p>
+        </div>
+        <a target="_blank" href={props.url}>
+          <IoOpenOutline />
+        </a>
+      </div>
     </div>
   )
 
