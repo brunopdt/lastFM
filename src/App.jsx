@@ -3,24 +3,27 @@ import './css/index.css'
 import CardAlbum from './CardAlbum'
 import Navbar from './Navbar'
 import { VscDebugRestart } from 'react-icons/vsc'
+import logo from './assets/lastfm-logo.png'
 
 function App() {
   const [user, setUser] = useState('')
   const [weeklyChart, setWeeklyChart] = useState()
-
+  let limit
   const API_KEY = '01013d723c1a151531d31395e6745113'
 
   const getWeeklyChart = async () => {
+    limit = document.querySelector('input[name = "limit"]:checked').value
+
     const res = await fetch(
-      `http://ws.audioscrobbler.com/2.0/?method=user.getweeklyalbumchart&user=${user}&api_key=${API_KEY}&format=json&limit=15`
+      `http://ws.audioscrobbler.com/2.0/?method=user.getweeklyalbumchart&user=${user}&api_key=${API_KEY}&format=json&limit=${limit}`
     )
     const data = await res.json()
     setWeeklyChart(data)
   }
-  console.log(weeklyChart)
 
   async function handleSubmit(e) {
     e.preventDefault()
+
     await getWeeklyChart()
     document.getElementById('form').style.display = 'none'
     document.getElementById('content-container').style.display = 'flex'
@@ -33,7 +36,9 @@ function App() {
       <form onSubmit={handleSubmit} id="form">
         <div className="background">
           <div className="form-card">
-            <h1 className="form-title">Olá! 🪕🎺</h1>
+            <h1 className="form-title">
+              Olá! 🪕🎺 <img id="main-logo" src={logo} alt="logo-last-fm" />
+            </h1>
 
             <h2 className="form-subtitle">
               Escreva o nome de um perfil do lastFM para ver os álbuns mais
@@ -42,7 +47,7 @@ function App() {
             </h2>
 
             <div className="auth">
-              <div className="auth-label">Nome</div>
+              <div className="auth-label">Nome de usuário</div>
               <input
                 className="auth-input"
                 id="userName"
@@ -50,9 +55,27 @@ function App() {
                 onChange={e => setUser(e.target.value)}
                 value={user}
                 autoComplete="off"
+                required
               />
+              <span id="radio-form-header">
+                {'Quantos registros deseja ver? '}
+              </span>
+              <div id="radio-form">
+                <span>
+                  <input type="radio" name="limit" required value="5" /> 5
+                </span>
+                <span>
+                  <input type="radio" name="limit" required value="10" /> 10
+                </span>
+                <span>
+                  <input type="radio" name="limit" required value="15" /> 15
+                </span>
+                <span>
+                  <input type="radio" name="limit" required value="20" /> 20{' '}
+                </span>
+              </div>
               <button className="auth-button" id="usersend" type="submit">
-                Entrar
+                Buscar
               </button>
             </div>
           </div>

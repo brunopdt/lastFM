@@ -13,10 +13,10 @@ h1 {
   display: none;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 90%;
+  width: 92%;
   gap: 1.5rem;
 
-  margin: 1rem auto 2rem auto;
+  margin: 0 auto 2rem auto;
 }
 
 p {
@@ -59,7 +59,7 @@ body {
   );
 
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#5e405f", endColorstr="#696758", GradientType=1 );
-  width: 100vw;
+  width: 99vw;
   margin: 0px;
 }
 
@@ -100,6 +100,8 @@ body {
   letter-spacing: 0.5px;
   color: #e8e8e8;
   padding-bottom: 12px;
+  display: flex;
+  align-items: center;
 }
 
 .form-subtitle {
@@ -203,4 +205,24 @@ body {
 .nome-album {
   font-size: 1.2rem;
   text-shadow: -1px 1px 0 #fa541c;
+}
+
+#radio-form {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 0.7rem;
+}
+
+#radio-form > span {
+  font-size: 1.2rem;
+  color: rgba(161, 155, 155, 0.87);
+}
+
+#radio-form-header {
+  color: rgba(161, 155, 155, 0.87);
+}
+
+#main-logo {
+  width: 11%;
+  margin-left: 1rem;
 }

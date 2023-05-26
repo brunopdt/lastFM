@@ -13,17 +13,12 @@
   gap: 2vw;
 }
 
-#logo {
-  width: 50px;
-  cursor: pointer;
-  margin-left: 1rem;
-}
-
 a {
   display: flex;
 }
 
 #github {
-  font-size: 50px;
+  font-size: 60px;
   align-self: center;
+  margin-left: 1rem;
 }
