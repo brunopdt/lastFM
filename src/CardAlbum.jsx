@@ -31,7 +31,9 @@ const CardAlbum = props => {
 
   async function generateImage(name, artist) {
     const res = await fetch(
-      `http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=01013d723c1a151531d31395e6745113&artist=${artist}&album=${name}&format=json`
+      `http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${
+        import.meta.env.VITE_API_KEY
+      }&artist=${artist}&album=${name}&format=json`
     )
     const data = await res.json()
     console.log(data)

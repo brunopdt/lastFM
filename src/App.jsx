@@ -9,13 +9,14 @@ function App() {
   const [user, setUser] = useState('')
   const [weeklyChart, setWeeklyChart] = useState()
   let limit
-  const API_KEY = '01013d723c1a151531d31395e6745113'
 
   const getWeeklyChart = async () => {
     limit = document.querySelector('input[name = "limit"]:checked').value
 
     const res = await fetch(
-      `http://ws.audioscrobbler.com/2.0/?method=user.getweeklyalbumchart&user=${user}&api_key=${API_KEY}&format=json&limit=${limit}`
+      `http://ws.audioscrobbler.com/2.0/?method=user.getweeklyalbumchart&user=${user}&api_key=${
+        import.meta.env.VITE_API_KEY
+      }&format=json&limit=${limit}`
     )
     const data = await res.json()
     setWeeklyChart(data)
