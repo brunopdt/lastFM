@@ -14,7 +14,7 @@ function App() {
     limit = document.querySelector('input[name = "limit"]:checked').value
 
     const res = await fetch(
-      `http://ws.audioscrobbler.com/2.0/?method=user.getweeklyalbumchart&user=${user}&api_key=${
+      `https://ws.audioscrobbler.com/2.0/?method=user.getweeklyalbumchart&user=${user}&api_key=${
         import.meta.env.VITE_API_KEY
       }&format=json&limit=${limit}`
     )
