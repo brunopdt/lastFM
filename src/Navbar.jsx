@@ -5,7 +5,7 @@ import { GoMarkGithub } from 'react-icons/go'
 function Navbar() {
   return (
     <nav id="navbar">
-      <a target="_blank" href="https://github.com/brunopdt">
+      <a target="_blank" href="https://github.com/brunopdt/lastFM">
         <GoMarkGithub id="github" />
       </a>
     </nav>
