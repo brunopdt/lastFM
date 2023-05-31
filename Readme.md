@@ -1,5 +1,7 @@
 # Semaninha do Last.fm
 
+https://last-fm-blue.vercel.app
+
 Bem-vindo ao Semaninha do Last.fm! Este é um website completamente responsivo que permite aos usuários visualizarem seus dados de audição musical do Last.fm durante a semana atual. Os usuários podem simplesmente digitar seu nome de usuário do Last.fm e escolher quantos registros desejam ver da semana para ver o que mais scrobblaram!
 
 ![Tela inicial do site](./src/assets/view-site-1.png)
@@ -15,7 +17,7 @@ Bem-vindo ao Semaninha do Last.fm! Este é um website completamente responsivo q
 
 ## Como usar
 
-1. Acesse o website do Semaninha.
+1. Acesse o website do Semaninha (disponível em: https://last-fm-blue.vercel.app)
 2. Digite o seu nome de usuário do Last.fm no campo designado.
 3. Escolha o número de registros que deseja visualizar na semana.
 4. Clique no botão "Buscar" para ver os resultados.
@@ -25,8 +27,9 @@ Bem-vindo ao Semaninha do Last.fm! Este é um website completamente responsivo q
 ## Tecnologias utilizadas
 
 - React + Vite
+- Vercel
 - CSS
-- Postman para teste e entendimento das APIs
+- Postman
 - API do LastFM: user.getWeeklyAlbumChart
 - API do LastFM: album.getInfo
 
