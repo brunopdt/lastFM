@@ -101,7 +101,10 @@ function App() {
               window.location.reload()
             }}
           >
-            <VscDebugRestart /> Tentar novamente
+            <span id="restart-text">
+              {' '}
+              <VscDebugRestart /> Tentar novamente
+            </span>
           </button>
         </div>
 
