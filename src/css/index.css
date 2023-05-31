@@ -96,7 +96,6 @@ body {
 .form-title {
   font-size: 42px;
   font-weight: 800;
-  letter-spacing: 0.5px;
   color: #e8e8e8;
   padding-bottom: 12px;
   display: flex;
@@ -105,7 +104,6 @@ body {
 
 .form-subtitle {
   font-size: 18px;
-  letter-spacing: 0.5px;
   color: #afafaf;
   padding-bottom: 24px;
 }
@@ -214,7 +212,8 @@ body {
   }
 }
 
-#radio-form #radio-form-header {
+#radio-form,
+#radio-form-header {
   color: rgba(161, 155, 155, 0.87);
 }
 
@@ -263,6 +262,11 @@ body {
   h1 {
     font-size: 1.5rem !important;
   }
+
+  .form-card {
+    margin: 0 auto;
+    padding: 0;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -296,5 +300,24 @@ body {
 
   #content-container {
     gap: 1rem;
+  }
+
+  .form-card {
+    width: 70%;
+  }
+
+  .form-title {
+    padding-bottom: 0rem;
+  }
+
+  .form-subtitle {
+    font-size: 0.9rem;
+  }
+
+  #radio-form {
+    font-size: 7rem;
+  }
+  #usersend {
+    height: 2.5rem;
   }
 }
